@@ -39,11 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework', #To make restful API's
+    'corsheaders', #To accepet request from cross origin
+
     #Built-in Apps
     "Search.apps.SearchConfig",
+
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -79,8 +86,12 @@ WSGI_APPLICATION = 'Arcane.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Arcane',
+        'USER': 'postgres',
+        'PASSWORD': 'fahadmalik',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

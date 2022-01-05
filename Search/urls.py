@@ -1,6 +1,12 @@
 from django.urls import path
-from .views import hello_world
+from django.urls.conf import include
+from rest_framework import routers
+from Search import views
+
+
+# router = routers.DefaultRouter()
+# router.register(r'results/<str:query>', views.SearchResultApi)
 
 urlpatterns = [
-    path("", hello_world, name="Hello World")
+    path('results/<str:query>', views.SearchResultApi)
 ]

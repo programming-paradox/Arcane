@@ -10,4 +10,4 @@ All the features and there purposes will bes hown here
 Languages and there process of installations
 
 # License
-All rights are reserverd
+All rights are reserverd by Arcane Developer's
